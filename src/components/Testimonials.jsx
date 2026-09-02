@@ -22,14 +22,14 @@ export default function Testimonials() {
       location: 'Kothrud, Pune',
       bike: 'TVS Jupiter 125',
       rating: 5,
-      text: 'Extremely polite mechanics and hassle-free doorstep pickup. Returned my scooter within 5 hours spotless clean with high-gloss polish. Will definitely use VJ for all future servicing.',
+      text: 'Extremely polite mechanics and hassle-free doorstep pickup. Returned my scooter within 5 hours spotless clean with high-gloss polish. Will definitely use Garage Work In for all future servicing.',
     },
     {
       name: 'Sameer Joshi',
       location: 'Wakad & PCMC',
       bike: 'Yamaha YZF R15 V4',
       rating: 5,
-      text: 'Superbike and sports bike owners know how hard it is to trust local garages. VJ technicians handled my R15 with extreme care and torque wrench precision. 10/10 service experience.',
+      text: 'Superbike and sports bike owners know how hard it is to trust local garages. Garage Work In technicians handled my R15 with extreme care and torque wrench precision. 10/10 service experience.',
     },
   ];
 

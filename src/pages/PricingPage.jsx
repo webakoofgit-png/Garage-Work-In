@@ -38,10 +38,10 @@ export default function PricingPage({ onOpenBooking }) {
               <thead>
                 <tr className="border-b border-white/10 bg-[#111] text-white">
                   <th className="p-4 uppercase">Inclusions</th>
-                  <th className="p-4 text-[#FF3D00]">VJ/01 (₹499)</th>
-                  <th className="p-4 text-[#FF3D00]">VJ/02 (₹699)</th>
-                  <th className="p-4 text-[#FF3D00]">VJ/03 (₹799)</th>
-                  <th className="p-4 text-[#FF3D00]">VJ/04 (Custom)</th>
+                  <th className="p-4 text-[#FF3D00]">0–125cc (₹399)</th>
+                  <th className="p-4 text-[#FF3D00]">125–220cc (₹499)</th>
+                  <th className="p-4 text-[#FF3D00]">220–400cc (₹599)</th>
+                  <th className="p-4 text-[#FF3D00]">600cc+ (₹1200)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5 text-[#8E9296]">
@@ -49,8 +49,8 @@ export default function PricingPage({ onOpenBooking }) {
                   <td className="p-4 font-bold text-white">Engine Displacement</td>
                   <td className="p-4">0 – 125 CC</td>
                   <td className="p-4">125 – 220 CC</td>
-                  <td className="p-4">220 – 350 CC</td>
-                  <td className="p-4">350 CC+ Superbikes</td>
+                  <td className="p-4">220 – 400 CC</td>
+                  <td className="p-4">600 CC+ Superbikes</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-bold text-white">Free Doorstep Pickup & Drop</td>

@@ -11,11 +11,11 @@ export default function FaqSection() {
     },
     {
       q: 'Is doorstep pickup and drop really 100% free?',
-      a: 'Yes! Doorstep pickup and return drop delivery are completely free across Pune & PCMC for all standard servicing packages (VJ/01, VJ/02, VJ/03, VJ/04). There are zero additional travel or logistics fees.',
+      a: 'Yes! Doorstep pickup and return drop delivery are completely free across Pune & PCMC for all standard servicing packages (₹399, ₹499, ₹599, ₹1200). There are zero additional travel or logistics fees.',
     },
     {
       q: 'Are there any hidden charges or unexpected part replacements?',
-      a: 'Absolutely none. Labor charges are strictly fixed based on your motorcycle engine displacement (0-125cc ₹499, 125-220cc ₹699, 220-350cc ₹799). Spare parts and engine oils are billed strictly at printed MRP. We send a digital inspection report on WhatsApp before replacing any part, and no work is performed without your explicit approval.',
+      a: 'Absolutely none. Labor charges are strictly fixed based on your motorcycle engine displacement (0-125cc ₹399, 125-220cc ₹499, 220-400cc ₹599). Spare parts and engine oils are billed strictly at printed MRP. We send a digital inspection report on WhatsApp before replacing any part, and no work is performed without your explicit approval.',
     },
     {
       q: 'When do I make the payment for my motorcycle service?',

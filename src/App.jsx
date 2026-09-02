@@ -48,7 +48,7 @@ export default function App() {
     };
   }, []);
 
-  const handleOpenBooking = (pkgTier = 'VJ / 02') => {
+  const handleOpenBooking = (pkgTier = '₹499 (125–220cc Performance)') => {
     setSelectedPackage(pkgTier);
     setBookingOpen(true);
   };
