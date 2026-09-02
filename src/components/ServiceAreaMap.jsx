@@ -35,32 +35,8 @@ export default function ServiceAreaMap() {
 
       {/* Interactive Radar Grid Stage */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* Left: Interactive Locality Grid */}
-        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {areas.map((area) => {
-            const isSelected = selectedArea === area.name;
-            return (
-              <button
-                key={area.name}
-                onClick={() => setSelectedArea(area.name)}
-                className={`p-4 rounded-xl text-left border transition-all ${isSelected
-                    ? 'bg-[#16171a] border-[#FF3D00] text-white shadow-lg shadow-[#FF3D00]/20 scale-105'
-                    : 'bg-[#0d0e10] border-white/10 text-[#8E9296] hover:border-white/20 hover:text-white'
-                  }`}
-                data-cursor="MAP"
-              >
-                <div className="flex items-center gap-2 mb-1">
-                  <MapPin className={`w-3.5 h-3.5 ${isSelected ? 'text-[#FF3D00]' : 'text-[#8E9296]'}`} />
-                  <span className="font-tech text-xs font-bold uppercase">{area.name}</span>
-                </div>
-                <div className="text-[10px] text-[#8E9296] font-mono">{area.slots}</div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Right: Radar Vector Display */}
-        <div className="lg:col-span-5 glass-card p-8 rounded-2xl border border-white/15 relative overflow-hidden flex flex-col justify-between min-h-[320px] bg-brushed-metal">
+        {/* Radar Vector Display (Detail Card - Screenshot 1) - TOP on mobile, RIGHT on lg */}
+        <div className="order-1 lg:order-2 lg:col-span-5 glass-card p-8 rounded-2xl border border-white/15 relative overflow-hidden flex flex-col justify-between min-h-[320px] bg-brushed-metal">
           {/* Radar Sweep Effect */}
           <div className="absolute inset-0 bg-[radial-gradient(#ff3d00_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none" />
 
@@ -97,6 +73,30 @@ export default function ServiceAreaMap() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Interactive Locality Grid (Buttons Grid - Screenshot 2) - BELOW on mobile, LEFT on lg */}
+        <div className="order-2 lg:order-1 lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {areas.map((area) => {
+            const isSelected = selectedArea === area.name;
+            return (
+              <button
+                key={area.name}
+                onClick={() => setSelectedArea(area.name)}
+                className={`p-4 rounded-xl text-left border transition-all ${isSelected
+                    ? 'bg-[#16171a] border-[#FF3D00] text-white shadow-lg shadow-[#FF3D00]/20 scale-105'
+                    : 'bg-[#0d0e10] border-white/10 text-[#8E9296] hover:border-white/20 hover:text-white'
+                  }`}
+                data-cursor="MAP"
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <MapPin className={`w-3.5 h-3.5 ${isSelected ? 'text-[#FF3D00]' : 'text-[#8E9296]'}`} />
+                  <span className="font-tech text-xs font-bold uppercase">{area.name}</span>
+                </div>
+                <div className="text-[10px] text-[#8E9296] font-mono">{area.slots}</div>
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>
