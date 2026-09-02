@@ -99,40 +99,8 @@ export default function OilExperience({ onOpenBooking }) {
 
       {/* Interactive Oil Grid Stage */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* Left: Brand Selection Cards */}
-        <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {oils.map((item, idx) => {
-            const isSelected = selectedOil === idx;
-            return (
-              <button
-                key={item.brand}
-                onClick={() => setSelectedOil(idx)}
-                className={`p-4 rounded-xl text-left transition-all duration-300 border flex flex-col justify-between min-h-[120px] ${
-                  isSelected
-                    ? 'bg-[#16171a] border-[#FF3D00] shadow-lg shadow-[#FF3D00]/20 scale-105'
-                    : 'bg-[#0d0e10] border-white/10 hover:border-white/20'
-                }`}
-                data-cursor="OIL"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-display text-2xl font-black text-white">{item.brand}</span>
-                  <div
-                    className="w-2.5 h-2.5 rounded-full"
-                    style={{ backgroundColor: item.color }}
-                  />
-                </div>
-                <div>
-                  <span className="text-[9px] font-tech text-[#8E9296] uppercase tracking-widest block">
-                    {item.badge}
-                  </span>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Right: Selected Oil Detailed Showcase */}
-        <div className="lg:col-span-6 glass-card p-8 rounded-2xl border border-white/15 relative overflow-hidden flex flex-col justify-between min-h-[380px]">
+        {/* Selected Oil Detailed Showcase (Screenshot 1) - TOP on mobile, RIGHT on lg */}
+        <div className="order-1 lg:order-2 lg:col-span-6 glass-card p-8 rounded-2xl border border-white/15 relative overflow-hidden flex flex-col justify-between min-h-[380px]">
           <div
             className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] pointer-events-none opacity-30"
             style={{ backgroundColor: active.color }}
@@ -175,6 +143,38 @@ export default function OilExperience({ onOpenBooking }) {
             <span>CHOOSE {active.brand} FOR SERVICE</span>
             <ArrowRight className="w-4 h-4" />
           </button>
+        </div>
+
+        {/* Brand Selection Cards Grid (Screenshot 2) - BELOW on mobile, LEFT on lg */}
+        <div className="order-2 lg:order-1 lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {oils.map((item, idx) => {
+            const isSelected = selectedOil === idx;
+            return (
+              <button
+                key={item.brand}
+                onClick={() => setSelectedOil(idx)}
+                className={`p-4 rounded-xl text-left transition-all duration-300 border flex flex-col justify-between min-h-[120px] ${
+                  isSelected
+                    ? 'bg-[#16171a] border-[#FF3D00] shadow-lg shadow-[#FF3D00]/20 scale-105'
+                    : 'bg-[#0d0e10] border-white/10 hover:border-white/20'
+                }`}
+                data-cursor="OIL"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-2xl font-black text-white">{item.brand}</span>
+                  <div
+                    className="w-2.5 h-2.5 rounded-full"
+                    style={{ backgroundColor: item.color }}
+                  />
+                </div>
+                <div>
+                  <span className="text-[9px] font-tech text-[#8E9296] uppercase tracking-widest block">
+                    {item.badge}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>
