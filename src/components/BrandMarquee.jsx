@@ -19,10 +19,33 @@ export default function BrandMarquee() {
     { name: 'KAWASAKI', tag: 'Ninja & Z Series', logo: '/assets/Brand logos/kawasaki.jpeg' },
   ];
 
-  const itemsPerPage = 4;
-  const totalPages = Math.ceil(brands.length / itemsPerPage);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
   const [currentPage, setCurrentPage] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  // Responsive Items Per Page (Mobile = 1 logo at a time, Tablet = 2, Desktop = 4)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(4);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(brands.length / itemsPerPage);
+
+  // Bound currentPage when window resizes
+  useEffect(() => {
+    setCurrentPage((prev) => Math.min(prev, Math.max(0, totalPages - 1)));
+  }, [totalPages]);
 
   // Auto-Carousel Timer (Cycles every 2.5 seconds seamlessly)
   useEffect(() => {
@@ -61,11 +84,13 @@ export default function BrandMarquee() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
       >
         {/* Navigation Chevron Arrows */}
         <button
           onClick={handlePrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#111]/90 border border-white/20 hover:border-[#FF3D00] text-white hover:text-[#FF3D00] flex items-center justify-center transition-all shadow-2xl backdrop-blur-md hover:scale-110 active:scale-95"
+          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#111]/90 border border-white/20 hover:border-[#FF3D00] text-white hover:text-[#FF3D00] flex items-center justify-center transition-all shadow-2xl backdrop-blur-md hover:scale-110 active:scale-95"
           aria-label="Previous Brands"
         >
           <ChevronLeft className="w-5 h-5" />
@@ -73,7 +98,7 @@ export default function BrandMarquee() {
 
         <button
           onClick={handleNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-[#111]/90 border border-white/20 hover:border-[#FF3D00] text-white hover:text-[#FF3D00] flex items-center justify-center transition-all shadow-2xl backdrop-blur-md hover:scale-110 active:scale-95"
+          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#111]/90 border border-white/20 hover:border-[#FF3D00] text-white hover:text-[#FF3D00] flex items-center justify-center transition-all shadow-2xl backdrop-blur-md hover:scale-110 active:scale-95"
           aria-label="Next Brands"
         >
           <ChevronRight className="w-5 h-5" />
@@ -112,14 +137,14 @@ export default function BrandMarquee() {
         </div>
 
         {/* Carousel Navigation Glowing Dots */}
-        <div className="flex items-center justify-center gap-3 mt-8">
+        <div className="flex items-center justify-center gap-1.5 sm:gap-3 mt-8 flex-wrap px-4">
           {[...Array(totalPages)].map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentPage(index)}
               className={`transition-all duration-300 rounded-full ${currentPage === index
-                  ? 'w-8 h-2.5 bg-[#FF3D00] shadow-[0_0_12px_#FF3D00]'
-                  : 'w-2.5 h-2.5 bg-white/20 hover:bg-white/50'
+                  ? 'w-6 sm:w-8 h-2 sm:h-2.5 bg-[#FF3D00] shadow-[0_0_12px_#FF3D00]'
+                  : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/20 hover:bg-white/50'
                 }`}
               aria-label={`Go to brand page ${index + 1}`}
             />
