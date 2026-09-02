@@ -7,7 +7,7 @@ export default function BookingPage() {
     name: '',
     phone: '',
     bikeModel: '',
-    packageTier: 'VJ / 02',
+    packageTier: '₹499 (125–220cc Performance)',
     location: 'Hinjewadi',
     pickupDate: '',
     notes: '',
@@ -142,11 +142,11 @@ Please confirm my pickup slot!`;
                     onChange={(e) => setFormData({ ...formData, packageTier: e.target.value })}
                     className="w-full bg-[#16171a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FF3D00]"
                   >
-                    <option value="VJ / 01">VJ / 01 — ₹499 (0-125cc Commuters)</option>
-                    <option value="VJ / 02">VJ / 02 — ₹699 (125-220cc Performance)</option>
-                    <option value="VJ / 03">VJ / 03 — ₹799 (220-350cc Cruisers)</option>
-                    <option value="VJ / 04">VJ / 04 — CUSTOM (350cc+ Superbikes)</option>
-                    <option value="VJ / 05">VJ / 05 — ₹499 Doorstep Bike Inspection</option>
+                    <option value="₹399 (0–125cc Commuters)">₹399 (0–125cc Commuters)</option>
+                    <option value="₹499 (125–220cc Performance)">₹499 (125–220cc Performance)</option>
+                    <option value="₹599 (220–400cc Cruisers & ADV)">₹599 (220–400cc Cruisers & ADV)</option>
+                    <option value="₹1200 (600cc Superbikes)">₹1200 (600cc Superbikes)</option>
+                    <option value="₹499 Doorstep Bike Inspection">₹499 Doorstep Bike Inspection</option>
                   </select>
                 </div>
 

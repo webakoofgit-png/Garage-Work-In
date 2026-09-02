@@ -208,7 +208,7 @@ export default function BikeHealthCheck({ onOpenBooking }) {
             </p>
 
             <button
-              onClick={() => onOpenBooking('VJ / 05')}
+              onClick={() => onOpenBooking('₹499 Doorstep Bike Inspection')}
               className="w-full py-3.5 bg-[#FF3D00] hover:bg-[#ff551c] text-white font-tech font-bold text-xs uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg"
               data-cursor="CHECK"
             >

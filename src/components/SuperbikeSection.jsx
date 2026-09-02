@@ -112,7 +112,7 @@ export default function SuperbikeSection({ onOpenBooking }) {
             </div>
 
             <button
-              onClick={() => onOpenBooking('VJ / 04')}
+              onClick={() => onOpenBooking('₹1200 (600cc Superbikes)')}
               className="w-full py-4 bg-[#FF3D00] hover:bg-[#ff551c] text-white font-tech font-bold text-xs uppercase tracking-widest rounded-lg flex items-center justify-center gap-3 transition-all shadow-xl"
               data-cursor="SUPERBIKE"
             >

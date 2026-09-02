@@ -23,7 +23,7 @@ import BookingPage from './pages/BookingPage';
 
 export default function App() {
   const [bookingOpen, setBookingOpen] = useState(false);
-  const [selectedPackage, setSelectedPackage] = useState('VJ / 02');
+  const [selectedPackage, setSelectedPackage] = useState('₹499 (125–220cc Performance)');
 
   // Initialize Lenis Smooth Scroll
   useEffect(() => {

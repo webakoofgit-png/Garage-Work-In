@@ -45,9 +45,10 @@ export default function Footer({ onOpenBooking }) {
             </h4>
             <ul className="space-y-2 text-xs font-sans">
               <li><Link to="/how-it-works" className="hover:text-[#FF3D00] transition-colors">How It Works (Doorstep)</Link></li>
-              <li><Link to="/pricing" className="hover:text-[#FF3D00] transition-colors">VJ / 01 — ₹499 (0-125cc)</Link></li>
-              <li><Link to="/pricing" className="hover:text-[#FF3D00] transition-colors">VJ / 02 — ₹699 (125-220cc)</Link></li>
-              <li><Link to="/pricing" className="hover:text-[#FF3D00] transition-colors">VJ / 03 — ₹799 (220-350cc)</Link></li>
+              <li><Link to="/pricing" className="hover:text-[#FF3D00] transition-colors">₹399 (0–125cc Commuters)</Link></li>
+              <li><Link to="/pricing" className="hover:text-[#FF3D00] transition-colors">₹499 (125–220cc Performance)</Link></li>
+              <li><Link to="/pricing" className="hover:text-[#FF3D00] transition-colors">₹599 (220–400cc Cruisers & ADV)</Link></li>
+              <li><Link to="/pricing" className="hover:text-[#FF3D00] transition-colors">₹1200 (600cc Superbikes)</Link></li>
               <li><Link to="/faq" className="hover:text-[#FF3D00] transition-colors">FAQ & Support Center</Link></li>
             </ul>
           </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { X, Calendar, MapPin, Wrench, ShieldCheck, CheckCircle2, MessageSquare, ArrowRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
-export default function BookingModal({ isOpen, onClose, initialPackage = 'VJ / 02' }) {
+export default function BookingModal({ isOpen, onClose, initialPackage = '₹499 (125–220cc Performance)' }) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -55,8 +55,8 @@ Please confirm my doorstep pickup slot!`;
         {/* Top Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#FF3D00] flex items-center justify-center text-white font-bold font-display text-xl">
-              VJ
+            <div className="w-9 h-9 rounded-lg bg-[#FF3D00] flex items-center justify-center text-white font-bold font-display text-sm tracking-wider">
+              GWI
             </div>
             <div>
               <h3 className="font-display text-xl sm:text-2xl font-bold uppercase text-white">
@@ -101,21 +101,21 @@ Please confirm my doorstep pickup slot!`;
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="text-[11px] font-tech text-[#8E9296] uppercase tracking-widest block mb-1">
-                  YOUR NAME *
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g. Rahul Sharma"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-[#16171a] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-white/20 focus:outline-none focus:border-[#FF3D00]"
-                />
-              </div>
+            <div>
+              <label className="text-[11px] font-tech text-[#8E9296] uppercase tracking-widest block mb-1">
+                YOUR FULL NAME *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="e.g. Rahul Sharma"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full bg-[#16171a] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-white/20 focus:outline-none focus:border-[#FF3D00]"
+              />
+            </div>
 
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-[11px] font-tech text-[#8E9296] uppercase tracking-widest block mb-1">
                   PHONE NUMBER *
@@ -129,20 +129,20 @@ Please confirm my doorstep pickup slot!`;
                   className="w-full bg-[#16171a] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-white/20 focus:outline-none focus:border-[#FF3D00]"
                 />
               </div>
-            </div>
 
-            <div>
-              <label className="text-[11px] font-tech text-[#8E9296] uppercase tracking-widest block mb-1">
-                BIKE MAKE & MODEL *
-              </label>
-              <input
-                type="text"
-                required
-                placeholder="e.g. Royal Enfield Classic 350 / Pulsar 220 / Activa 6G"
-                value={formData.bikeModel}
-                onChange={(e) => setFormData({ ...formData, bikeModel: e.target.value })}
-                className="w-full bg-[#16171a] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-white/20 focus:outline-none focus:border-[#FF3D00]"
-              />
+              <div>
+                <label className="text-[11px] font-tech text-[#8E9296] uppercase tracking-widest block mb-1">
+                  BIKE MAKE & MODEL *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Royal Enfield Classic 350 / Pulsar 220"
+                  value={formData.bikeModel}
+                  onChange={(e) => setFormData({ ...formData, bikeModel: e.target.value })}
+                  className="w-full bg-[#16171a] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white placeholder-white/20 focus:outline-none focus:border-[#FF3D00]"
+                />
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -155,11 +155,11 @@ Please confirm my doorstep pickup slot!`;
                   onChange={(e) => setFormData({ ...formData, packageTier: e.target.value })}
                   className="w-full bg-[#16171a] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#FF3D00]"
                 >
-                  <option value="VJ / 01">VJ / 01 — ₹499 (0-125cc)</option>
-                  <option value="VJ / 02">VJ / 02 — ₹699 (125-220cc)</option>
-                  <option value="VJ / 03">VJ / 03 — ₹799 (220-350cc)</option>
-                  <option value="VJ / 04">VJ / 04 — CUSTOM (350cc+ Superbike)</option>
-                  <option value="VJ / 05">VJ / 05 — ₹499 Bike Inspection</option>
+                  <option value="₹399 (0–125cc Commuters)">₹399 (0–125cc Commuters)</option>
+                  <option value="₹499 (125–220cc Performance)">₹499 (125–220cc Performance)</option>
+                  <option value="₹599 (220–400cc Cruisers & ADV)">₹599 (220–400cc Cruisers & ADV)</option>
+                  <option value="₹1200 (600cc Superbikes)">₹1200 (600cc Superbikes)</option>
+                  <option value="₹499 Doorstep Bike Inspection">₹499 Doorstep Bike Inspection</option>
                 </select>
               </div>
 
