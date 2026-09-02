@@ -12,11 +12,11 @@ export default function Footer({ onOpenBooking }) {
             <Link to="/" className="flex items-center gap-3">
 
               <span className="font-display text-3xl font-black text-white tracking-wider">
-                Garage<span className="text-[#FF3D00]">Work In</span>
+                Garage<span className="text-[#FF3D00]"> Work In</span>
               </span>
             </Link>
             <p className="text-xs font-sans text-[#8E9296] leading-relaxed max-w-sm">
-              Pune’s premier 3D motorcycle care platform. Free doorstep pickup & drop, transparent fixed labor rates, genuine spare parts billed at MRP, and pay after delivery.
+              No Hidden Charges
             </p>
             <div className="flex items-center gap-3 text-xs font-tech text-white">
               <MapPin className="w-4 h-4 text-[#FF3D00]" />

@@ -46,7 +46,7 @@ export default function Navbar({ onOpenBooking }) {
             </div>
             <div className="text-[9px] font-tech text-[#8E9296] tracking-widest uppercase flex items-center gap-1 mt-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              PUNE DOORSTEP BIKE CARE
+              NO HIDDEN CHARGES
             </div>
           </div>
         </Link>
