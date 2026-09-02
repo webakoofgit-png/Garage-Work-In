@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activity, Gauge, ShieldCheck, AlertTriangle, CheckCircle, RefreshCw, ArrowRight } from 'lucide-react';
+import { Activity, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function BikeHealthCheck({ onOpenBooking }) {
   // State for health parameters (100 is healthy, lower is degraded)
@@ -49,8 +49,65 @@ export default function BikeHealthCheck({ onOpenBooking }) {
       {/* Dashboard Interface Stage */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="glass-card p-6 sm:p-10 rounded-3xl border border-white/15 bg-brushed-metal shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left Column: Interactive Gauges Selector */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Live Circular Score Ring (Screenshot 1) - TOP on mobile, RIGHT on lg */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-center text-center p-6 bg-[#080808] rounded-2xl border border-white/10 relative overflow-hidden">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center mb-6">
+              {/* Circular Gauge Ring */}
+              <svg className="w-full h-full transform -rotate-90">
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="40%"
+                  className="stroke-white/10 fill-none stroke-[8px]"
+                />
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="40%"
+                  className={`fill-none stroke-[10px] transition-all duration-700 ease-out ${currentScore >= 85
+                      ? 'stroke-emerald-400'
+                      : currentScore >= 65
+                        ? 'stroke-amber-400'
+                        : 'stroke-[#FF3D00]'
+                    }`}
+                  strokeDasharray="283"
+                  strokeDashoffset={283 - (283 * currentScore) / 100}
+                  strokeLinecap="round"
+                />
+              </svg>
+
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <span className="font-display text-6xl sm:text-7xl font-black text-white">
+                  {currentScore}
+                </span>
+                <span className="text-[10px] font-tech text-[#8E9296] tracking-widest uppercase">
+                  HEALTH SCORE / 100
+                </span>
+              </div>
+            </div>
+
+            <div
+              className={`px-4 py-1.5 rounded-full text-xs font-tech font-bold uppercase tracking-widest border mb-4 ${status.badge} ${status.color}`}
+            >
+              {status.label}
+            </div>
+
+            <p className="text-xs text-[#8E9296] font-sans mb-6">
+              Full Garage Work in doorstep inspection covers 25+ vital component parameters with digital job card report.
+            </p>
+
+            <button
+              onClick={() => onOpenBooking('₹499 Doorstep Bike Inspection')}
+              className="w-full py-3.5 bg-[#FF3D00] hover:bg-[#ff551c] text-white font-tech font-bold text-xs uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg"
+              data-cursor="CHECK"
+            >
+              <span>GET MY BIKE CHECKED (₹499)</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Component Diagnostic Simulator (Screenshot 2) - BELOW on mobile, LEFT on lg */}
+          <div className="order-2 lg:order-1 lg:col-span-7 space-y-6">
             <h3 className="font-tech text-xs font-bold text-[#FF3D00] uppercase tracking-widest">
               [COMPONENT DIAGNOSTIC SIMULATOR]
             </h3>
@@ -158,63 +215,6 @@ export default function BikeHealthCheck({ onOpenBooking }) {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Right Column: Live Circular Score Ring */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center text-center p-6 bg-[#080808] rounded-2xl border border-white/10 relative overflow-hidden">
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center mb-6">
-              {/* Circular Gauge Ring */}
-              <svg className="w-full h-full transform -rotate-90">
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="40%"
-                  className="stroke-white/10 fill-none stroke-[8px]"
-                />
-                <circle
-                  cx="50%"
-                  cy="50%"
-                  r="40%"
-                  className={`fill-none stroke-[10px] transition-all duration-700 ease-out ${currentScore >= 85
-                      ? 'stroke-emerald-400'
-                      : currentScore >= 65
-                        ? 'stroke-amber-400'
-                        : 'stroke-[#FF3D00]'
-                    }`}
-                  strokeDasharray="283"
-                  strokeDashoffset={283 - (283 * currentScore) / 100}
-                  strokeLinecap="round"
-                />
-              </svg>
-
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="font-display text-6xl sm:text-7xl font-black text-white">
-                  {currentScore}
-                </span>
-                <span className="text-[10px] font-tech text-[#8E9296] tracking-widest uppercase">
-                  HEALTH SCORE / 100
-                </span>
-              </div>
-            </div>
-
-            <div
-              className={`px-4 py-1.5 rounded-full text-xs font-tech font-bold uppercase tracking-widest border mb-4 ${status.badge} ${status.color}`}
-            >
-              {status.label}
-            </div>
-
-            <p className="text-xs text-[#8E9296] font-sans mb-6">
-              Full Garage Work in doorstep inspection covers 25+ vital component parameters with digital job card report.
-            </p>
-
-            <button
-              onClick={() => onOpenBooking('₹499 Doorstep Bike Inspection')}
-              className="w-full py-3.5 bg-[#FF3D00] hover:bg-[#ff551c] text-white font-tech font-bold text-xs uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg"
-              data-cursor="CHECK"
-            >
-              <span>GET MY BIKE CHECKED (₹499)</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
           </div>
         </div>
       </div>
