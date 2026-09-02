@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Award, Bike, Clock, Headphones } from 'lucide-react';
+import { Award, Bike, Clock, Headphones, ShieldCheck } from 'lucide-react';
 
 export default function TrustStrip() {
   const [isVisible, setIsVisible] = useState(false);
@@ -46,6 +46,12 @@ export default function TrustStrip() {
       label: 'HUMAN SUPPORT',
       sublabel: 'Live WhatsApp Video & Invoice Updates',
     },
+    {
+      icon: ShieldCheck,
+      value: '24 / 7',
+      label: 'SERVICE AVAILABLE',
+      sublabel: 'Round-the-Clock Doorstep Assistance & Pickup',
+    },
   ];
 
   return (
@@ -57,7 +63,7 @@ export default function TrustStrip() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
           {stats.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -66,12 +72,12 @@ export default function TrustStrip() {
                 className={`flex flex-col items-center text-center p-4 transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
-                style={{ transitionDelay: `${idx * 150}ms` }}
+                style={{ transitionDelay: `${idx * 120}ms` }}
               >
                 <div className="w-12 h-12 rounded-xl bg-[#111] border border-[#FF3D00]/40 flex items-center justify-center mb-3 shadow-lg group">
                   <Icon className="w-6 h-6 text-[#FF3D00] group-hover:scale-110 transition-transform" />
                 </div>
-                <div className="font-display text-4xl sm:text-5xl font-black text-white tracking-wider metallic-text">
+                <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-wider metallic-text">
                   {item.value}
                 </div>
                 <div className="font-tech text-xs font-bold text-[#FF3D00] uppercase tracking-widest mt-1">
