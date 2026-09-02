@@ -18,7 +18,7 @@ export default function FinalCta({ onOpenBooking }) {
 
         <h2 className="font-display text-5xl sm:text-8xl font-black uppercase text-white tracking-tight leading-none drop-shadow-2xl">
           PUNE, YOUR BIKE IS NEXT. <br />
-          <span className="text-[#FF3D00] neon-text-red">GIVE IT THE VJ TREATMENT.</span>
+          <span className="text-[#FF3D00] neon-text-red">GIVE IT TO THE GARAGE WORK IN.</span>
         </h2>
 
         <p className="text-base sm:text-xl text-[#8E9296] font-sans max-w-2xl mx-auto leading-relaxed">

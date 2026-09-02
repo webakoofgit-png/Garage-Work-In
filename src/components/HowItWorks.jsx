@@ -41,7 +41,7 @@ export default function HowItWorks({ onOpenBooking }) {
           4 TO 8 HOUR TURNAROUND
         </div>
         <h2 className="font-display text-4xl sm:text-6xl font-black uppercase text-white tracking-tight">
-          THE VJ WAY. <br />
+          THE GARAGE WORK IN WAY. <br />
           <span className="metallic-text">DOORSTEP CARE REDEFINED.</span>
         </h2>
         <p className="text-[#8E9296] text-sm sm:text-base max-w-xl mx-auto mt-4 font-sans">
@@ -62,9 +62,8 @@ export default function HowItWorks({ onOpenBooking }) {
             return (
               <div
                 key={item.step}
-                className={`flex flex-col sm:flex-row items-center gap-8 ${
-                  isEven ? 'sm:flex-row-reverse' : ''
-                }`}
+                className={`flex flex-col sm:flex-row items-center gap-8 ${isEven ? 'sm:flex-row-reverse' : ''
+                  }`}
               >
                 {/* Content Box */}
                 <div className="w-full sm:w-1/2 glass-card p-6 sm:p-8 rounded-2xl border border-white/10 hover:border-[#FF3D00] transition-all">

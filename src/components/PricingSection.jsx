@@ -4,8 +4,8 @@ import { ShieldCheck, Check, Sparkles, ArrowRight, Zap } from 'lucide-react';
 export default function PricingSection({ onOpenBooking }) {
   const plans = [
     {
-      code: 'VJ / 01',
-      price: '₹499',
+      code: '',
+      price: '₹399',
       category: '0 – 125 CC COMMUTERS',
       popular: false,
       models: 'Splendor, Shine, Passion, Platina, HF Deluxe, Discover, Activa, Jupiter & similar',
@@ -20,8 +20,8 @@ export default function PricingSection({ onOpenBooking }) {
       ],
     },
     {
-      code: 'VJ / 02',
-      price: '₹699',
+      code: '',
+      price: '₹499',
       category: '125 – 220 CC PERFORMANCE',
       popular: true,
       models: 'Pulsar, Apache, FZ, Unicorn, Hornet, MT-15, R15, Aerox & similar',
@@ -36,9 +36,9 @@ export default function PricingSection({ onOpenBooking }) {
       ],
     },
     {
-      code: 'VJ / 03',
-      price: '₹799',
-      category: '220 – 350 CC CRUISERS & ADV',
+      code: '',
+      price: '₹599',
+      category: '220 – 400 CC CRUISERS & ADV',
       popular: false,
       models: 'Royal Enfield Classic/Bullet/Himalayan, KTM Duke 250/390, Dominar 400, CB350',
       features: [
@@ -52,9 +52,9 @@ export default function PricingSection({ onOpenBooking }) {
       ],
     },
     {
-      code: 'VJ / 04',
-      price: 'CUSTOM',
-      category: '350 CC+ SUPERBIKES',
+      code: '',
+      price: '₹1200',
+      category: '600 CC',
       popular: false,
       models: 'Kawasaki Ninja, Hayabusa, ZX-10R, Z900, BMW Motorrad, Ducati, Triumph, Benelli, Aprilia',
       features: [
@@ -68,7 +68,7 @@ export default function PricingSection({ onOpenBooking }) {
       ],
     },
     {
-      code: 'VJ / 05',
+      code: '',
       price: '₹499',
       category: 'DOORSTEP BIKE INSPECTION',
       popular: false,
@@ -109,9 +109,8 @@ export default function PricingSection({ onOpenBooking }) {
           {plans.map((plan, idx) => (
             <div
               key={plan.code}
-              className={`flex-none w-[320px] sm:w-[360px] snap-center glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative transition-all duration-500 hover:-translate-y-2 ${
-                plan.popular ? 'border-2 border-[#FF3D00] shadow-2xl shadow-[#FF3D00]/20 bg-[#16171a]' : ''
-              }`}
+              className={`flex-none w-[320px] sm:w-[360px] snap-center glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative transition-all duration-500 hover:-translate-y-2 ${plan.popular ? 'border-2 border-[#FF3D00] shadow-2xl shadow-[#FF3D00]/20 bg-[#16171a]' : ''
+                }`}
               data-cursor="PLAN"
             >
               {plan.popular && (
@@ -151,11 +150,10 @@ export default function PricingSection({ onOpenBooking }) {
 
               <button
                 onClick={() => onOpenBooking(plan.code)}
-                className={`w-full py-3.5 rounded-lg font-tech font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 ${
-                  plan.popular
-                    ? 'bg-[#FF3D00] hover:bg-[#ff551c] text-white shadow-lg'
-                    : 'bg-[#111] hover:bg-white/10 text-white border border-white/15'
-                }`}
+                className={`w-full py-3.5 rounded-lg font-tech font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 ${plan.popular
+                  ? 'bg-[#FF3D00] hover:bg-[#ff551c] text-white shadow-lg'
+                  : 'bg-[#111] hover:bg-white/10 text-white border border-white/15'
+                  }`}
                 data-cursor="BOOK"
               >
                 <span>BOOK THIS TIER</span>
