@@ -7,6 +7,7 @@ export default function OilExperience({ onOpenBooking }) {
   const oils = [
     {
       brand: 'MOTUL',
+      logo: '/assets/engine oil logos/motul.png',
       name: '300V / 7100 100% SYNTHETIC',
       tagline: 'ESTER Core® Technology for Max Horsepower',
       badge: '100% SYNTHETIC',
@@ -17,6 +18,7 @@ export default function OilExperience({ onOpenBooking }) {
     },
     {
       brand: 'CASTROL',
+      logo: '/assets/engine oil logos/castrol.jpeg',
       name: 'POWER1 ULTIMATE 4T',
       tagline: '3-in-1 Formula for Ultimate Acceleration & Smooth Shift',
       badge: 'ACTIVE PROTECTION',
@@ -27,6 +29,7 @@ export default function OilExperience({ onOpenBooking }) {
     },
     {
       brand: 'SHELL',
+      logo: '/assets/engine oil logos/shell.jpeg',
       name: 'ADVANCE ULTRA 4T',
       tagline: 'PurePlus Technology Made from Natural Gas',
       badge: 'ACTIVE CLEANSING',
@@ -37,6 +40,7 @@ export default function OilExperience({ onOpenBooking }) {
     },
     {
       brand: 'YAMALUBE',
+      logo: '/assets/engine oil logos/yamalube.jpeg',
       name: '4T HIGH PERFORMANCE',
       tagline: 'Yamaha Factory Spec Formula for R15 & FZ Engine Health',
       badge: 'FACTORY APPROVED',
@@ -47,6 +51,7 @@ export default function OilExperience({ onOpenBooking }) {
     },
     {
       brand: 'GULF',
+      logo: '/assets/engine oil logos/gulf.jpeg',
       name: 'PRIDE 4T SYNTHETIC',
       tagline: 'Faster Pick-up and Enhanced Thermal Protection',
       badge: 'FASTER PICK-UP',
@@ -57,6 +62,7 @@ export default function OilExperience({ onOpenBooking }) {
     },
     {
       brand: 'SERVO',
+      logo: '/assets/engine oil logos/servo.jpeg',
       name: 'SUPER 4T GENUINE',
       tagline: 'Proven Engine Protection and Long Drain Oil Life',
       badge: 'GENUINE PROTECTION',
@@ -99,54 +105,35 @@ export default function OilExperience({ onOpenBooking }) {
 
       {/* Interactive Oil Grid Stage */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* Selected Oil Detailed Showcase (Screenshot 1) - TOP on mobile, RIGHT on lg */}
-        <div className="order-1 lg:order-2 lg:col-span-6 glass-card p-8 rounded-2xl border border-white/15 relative overflow-hidden flex flex-col justify-between min-h-[380px]">
+        {/* Selected Oil Showcase - ONLY FULL SIZE LOGO & BOOK BUTTON */}
+        <div className="order-1 lg:order-2 lg:col-span-6 glass-card p-6 sm:p-8 rounded-2xl border border-white/15 relative overflow-hidden flex flex-col justify-between items-center min-h-[380px]">
           <div
-            className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] pointer-events-none opacity-30"
+            className="absolute -top-10 -right-10 w-72 h-72 rounded-full blur-[120px] pointer-events-none opacity-30 transition-all duration-500"
             style={{ backgroundColor: active.color }}
           />
 
-          <div>
-            <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
-              <span className="font-display text-4xl font-black text-white">{active.brand}</span>
-              <span className="px-3 py-1 bg-[#111] border border-white/10 rounded text-xs font-tech font-bold text-white">
-                {active.badge}
-              </span>
-            </div>
-
-            <h3 className="font-tech text-lg font-bold text-[#FF3D00] uppercase mb-2">
-              {active.name}
-            </h3>
-            <p className="text-sm text-[#8E9296] font-sans mb-6">{active.tagline}</p>
-
-            <div className="space-y-3 font-mono text-xs text-[#F4F2ED] bg-[#0d0e10] p-4 rounded-xl border border-white/5 mb-6">
-              <div className="flex justify-between">
-                <span className="text-[#8E9296]">VISCOSITY GRADES:</span>
-                <span className="font-bold text-white">{active.viscosity}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-[#8E9296]">RECOMMENDED FOR:</span>
-                <span className="font-bold text-white">{active.idealFor}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-[#8E9296]">BILLING PROMISE:</span>
-                <span className="font-bold text-emerald-400">{active.mrpPromise}</span>
-              </div>
-            </div>
+          {/* Full Size Logo Card Container */}
+          <div className="w-full bg-white rounded-2xl p-6 sm:p-10 flex items-center justify-center h-64 sm:h-72 shadow-2xl border border-white/20 my-auto transition-all duration-500">
+            <img
+              key={active.brand}
+              src={active.logo}
+              alt={active.brand}
+              className="max-h-full max-w-full object-contain drop-shadow-md animate-fade-in"
+            />
           </div>
 
           <button
             onClick={() => onOpenBooking()}
-            className="w-full py-3.5 bg-[#FF3D00] hover:bg-[#ff551c] text-white font-tech font-bold text-xs uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg"
+            className="w-full py-4 bg-[#FF3D00] hover:bg-[#ff551c] text-white font-tech font-bold text-sm uppercase tracking-widest rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#FF3D00]/25 mt-6"
             data-cursor="BOOK"
           >
             <span>CHOOSE {active.brand} FOR SERVICE</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Brand Selection Cards Grid (Screenshot 2) - BELOW on mobile, LEFT on lg */}
-        <div className="order-2 lg:order-1 lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {/* Left: Brand Selection Cards Grid - Text Names */}
+        <div className="order-2 lg:order-1 lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-4">
           {oils.map((item, idx) => {
             const isSelected = selectedOil === idx;
             return (
