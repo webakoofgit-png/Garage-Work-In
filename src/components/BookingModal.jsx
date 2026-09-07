@@ -28,7 +28,7 @@ export default function BookingModal({ isOpen, onClose, initialPackage = '₹499
       origin: { y: 0.6 },
     });
 
-    // Format WhatsApp message
+    // Format full WhatsApp message with all form fields
     const text = `*NEW BIKE SERVICE BOOKING — Garage Work in PUNE* 🏍️
 ---------------------------------
 👤 *Name:* ${formData.name || 'Rider'}
@@ -44,9 +44,8 @@ Please confirm my doorstep pickup slot!`;
     const encodedText = encodeURIComponent(text);
     const whatsappUrl = `https://wa.me/917219490145?text=${encodedText}`;
 
-    setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-    }, 1200);
+    // Open WhatsApp immediately on submit to prevent browser popup blocking
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -87,17 +86,31 @@ Please confirm my doorstep pickup slot!`;
             <p className="text-xs text-[#8E9296] font-sans max-w-xs mx-auto">
               Opening WhatsApp chat with Garage Work in Pune... If it doesn't open automatically, click below:
             </p>
-            <a
-              href={`https://wa.me/917219490145?text=${encodeURIComponent(
-                `Hi Garage Work in! I want to book doorstep bike service for my ${formData.bikeModel}`
-              )}`}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#FF3D00] text-white font-tech font-bold text-xs uppercase tracking-widest rounded-lg shadow-lg"
-            >
-              <MessageSquare className="w-4 h-4" />
-              OPEN WHATSAPP NOW
-            </a>
+            {(() => {
+              const text = `*NEW BIKE SERVICE BOOKING — Garage Work in PUNE* 🏍️
+---------------------------------
+👤 *Name:* ${formData.name || 'Rider'}
+📞 *Phone:* ${formData.phone || 'N/A'}
+🏍️ *Bike:* ${formData.bikeModel || 'Standard Two-Wheeler'}
+📦 *Service Package:* ${formData.packageTier}
+📍 *Pune Location:* ${formData.location}
+📅 *Preferred Slot:* ${formData.pickupDate || 'Earliest Available'}
+📝 *Notes:* ${formData.notes || 'Routine Servicing'}
+---------------------------------
+Please confirm my doorstep pickup slot!`;
+              const fullWhatsappUrl = `https://wa.me/917219490145?text=${encodeURIComponent(text)}`;
+              return (
+                <a
+                  href={fullWhatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#FF3D00] text-white font-tech font-bold text-xs uppercase tracking-widest rounded-lg shadow-lg"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  OPEN WHATSAPP NOW
+                </a>
+              );
+            })()}
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">

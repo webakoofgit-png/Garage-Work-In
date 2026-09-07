@@ -66,6 +66,13 @@ export default function Footer({ onOpenBooking }) {
                 <Phone className="w-4 h-4 text-[#FF3D00]" />
                 +91 7219490145
               </a>
+              <a
+                href="tel:+917219390145"
+                className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-[#111] border border-white/10 text-xs font-tech text-white hover:border-[#FF3D00] transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#FF3D00]" />
+                +91 7219390145
+              </a>
               <button
                 onClick={() => onOpenBooking()}
                 className="w-full flex items-center justify-center gap-2.5 px-4 py-2.5 rounded-lg bg-[#FF3D00] text-xs font-tech font-bold text-white uppercase tracking-widest hover:bg-[#ff551c] transition-all shadow-md"
