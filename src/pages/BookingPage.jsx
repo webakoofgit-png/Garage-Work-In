@@ -25,15 +25,16 @@ export default function BookingPage() {
       origin: { y: 0.5 },
     });
 
-    const text = `*NEW ONLINE BIKE SERVICE BOOKING — Garage Work in PUNE* 🏍️
+    const cleanPackage = (formData.packageTier || '').replace(/–/g, '-');
+    const text = `*NEW ONLINE BIKE SERVICE BOOKING — Garage Work in PUNE*
 ---------------------------------
-👤 *Rider Name:* ${formData.name || 'Rider'}
-📞 *Phone:* ${formData.phone || 'N/A'}
-🏍️ *Bike:* ${formData.bikeModel || 'Standard Motorcycle'}
-📦 *Service Package:* ${formData.packageTier}
-📍 *Pune Location:* ${formData.location}
-📅 *Preferred Slot:* ${formData.pickupDate || 'Earliest Available'}
-📝 *Notes:* ${formData.notes || 'Routine Doorstep Service'}
+• *Rider Name:* ${formData.name || 'Rider'}
+• *Phone:* ${formData.phone || 'N/A'}
+• *Bike:* ${formData.bikeModel || 'Standard Motorcycle'}
+• *Service Package:* ${cleanPackage}
+• *Pune Location:* ${formData.location}
+• *Preferred Slot:* ${formData.pickupDate || 'Earliest Available'}
+• *Notes:* ${formData.notes || 'Routine Doorstep Service'}
 ---------------------------------
 Please confirm my pickup slot!`;
 
@@ -74,15 +75,16 @@ Please confirm my pickup slot!`;
                 Opening direct WhatsApp chat with Garage Work in Pune... If it doesn't open automatically, click below:
               </p>
               {(() => {
-                const text = `*NEW BIKE SERVICE BOOKING — Garage Work in PUNE* 🏍️
+                const cleanPackage = (formData.packageTier || '').replace(/–/g, '-');
+                const text = `*NEW BIKE SERVICE BOOKING — Garage Work in PUNE*
 ---------------------------------
-👤 *Rider Name:* ${formData.name || 'Rider'}
-📞 *Phone:* ${formData.phone || 'N/A'}
-🏍️ *Bike:* ${formData.bikeModel || 'Standard Motorcycle'}
-📦 *Service Package:* ${formData.packageTier}
-📍 *Pune Location:* ${formData.location}
-📅 *Preferred Slot:* ${formData.pickupDate || 'Earliest Available'}
-📝 *Notes:* ${formData.notes || 'Routine Doorstep Service'}
+• *Rider Name:* ${formData.name || 'Rider'}
+• *Phone:* ${formData.phone || 'N/A'}
+• *Bike:* ${formData.bikeModel || 'Standard Motorcycle'}
+• *Service Package:* ${cleanPackage}
+• *Pune Location:* ${formData.location}
+• *Preferred Slot:* ${formData.pickupDate || 'Earliest Available'}
+• *Notes:* ${formData.notes || 'Routine Doorstep Service'}
 ---------------------------------
 Please confirm my pickup slot!`;
                 const fullWhatsappUrl = `https://wa.me/917219490145?text=${encodeURIComponent(text)}`;
