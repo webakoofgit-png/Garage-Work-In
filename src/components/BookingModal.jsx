@@ -42,7 +42,7 @@ export default function BookingModal({ isOpen, onClose, initialPackage = '₹499
 Please confirm my doorstep pickup slot!`;
 
     const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `https://wa.me/918888888888?text=${encodedText}`;
+    const whatsappUrl = `https://wa.me/917219490145?text=${encodedText}`;
 
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
@@ -88,7 +88,7 @@ Please confirm my doorstep pickup slot!`;
               Opening WhatsApp chat with Garage Work in Pune... If it doesn't open automatically, click below:
             </p>
             <a
-              href={`https://wa.me/918888888888?text=${encodeURIComponent(
+              href={`https://wa.me/917219490145?text=${encodeURIComponent(
                 `Hi Garage Work in! I want to book doorstep bike service for my ${formData.bikeModel}`
               )}`}
               target="_blank"

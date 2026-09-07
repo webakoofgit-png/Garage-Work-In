@@ -23,7 +23,7 @@ export default function FaqSection() {
     },
     {
       q: 'How do I book a doorstep bike service slot?',
-      a: 'You can book instantly by clicking "BOOK SERVICE" or "BOOK ON WHATSAPP" on our website, or calling our helpline at +91 88888 88888. Share your bike model, location, and preferred time slot, and our pickup executive will be assigned immediately.',
+      a: 'You can book instantly by clicking "BOOK SERVICE" or "BOOK ON WHATSAPP" on our website, or calling our helpline at +91 7219490145. Share your bike model, location, and preferred time slot, and our pickup executive will be assigned immediately.',
     },
   ];
 

@@ -37,7 +37,7 @@ export default function FinalCta({ onOpenBooking }) {
           </button>
 
           <a
-            href="tel:+918888888888"
+            href="tel:+917219490145"
             className="px-8 py-5 bg-[#111] hover:bg-[#1f2124] text-white font-tech font-bold text-sm sm:text-base uppercase tracking-widest rounded-xl border border-white/20 transition-all flex items-center gap-3"
             data-cursor="CALL"
           >

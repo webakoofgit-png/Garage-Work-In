@@ -78,12 +78,12 @@ export default function Navbar({ onOpenBooking }) {
         {/* Right CTA Actions */}
         <div className="hidden sm:flex items-center gap-4">
           <a
-            href="tel:+918888888888"
+            href="tel:+917219490145"
             className="flex items-center gap-2 px-3 py-2 text-xs font-tech font-medium text-[#F4F2ED] hover:text-[#FF3D00] transition-colors"
             data-cursor="CALL"
           >
             <Phone className="w-3.5 h-3.5 text-[#FF3D00]" />
-            <span>+91 88888 88888</span>
+            <span>+91 7219490145</span>
           </a>
 
           <button
@@ -132,11 +132,11 @@ export default function Navbar({ onOpenBooking }) {
             ))}
             <div className="flex flex-col gap-3 pt-4">
               <a
-                href="tel:+918888888888"
+                href="tel:+917219490145"
                 className="flex items-center justify-center gap-2 py-2.5 text-xs font-tech text-[#F4F2ED] bg-[#111] border border-white/10 rounded-md"
               >
                 <Phone className="w-4 h-4 text-[#FF3D00]" />
-                CALL: +91 88888 88888
+                CALL: +91 7219490145
               </a>
               <button
                 onClick={() => {

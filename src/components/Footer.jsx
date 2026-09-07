@@ -20,7 +20,7 @@ export default function Footer({ onOpenBooking }) {
             </p>
             <div className="flex items-center gap-3 text-xs font-tech text-white">
               <MapPin className="w-4 h-4 text-[#FF3D00]" />
-              <span>Serving All Pune & PCMC Localities</span>
+              <span>Address-Garage Work In,handewadi Katraj Rd,near Cygnet Public School,Adarsh Nagar,Pune-412308</span>
             </div>
           </div>
 
@@ -60,11 +60,11 @@ export default function Footer({ onOpenBooking }) {
             </h4>
             <div className="space-y-3">
               <a
-                href="tel:+918888888888"
+                href="tel:+917219490145"
                 className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-[#111] border border-white/10 text-xs font-tech text-white hover:border-[#FF3D00] transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#FF3D00]" />
-                +91 88888 88888
+                +91 7219490145
               </a>
               <button
                 onClick={() => onOpenBooking()}
