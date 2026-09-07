@@ -94,7 +94,7 @@ export default function Footer({ onOpenBooking }) {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-tech text-[#8E9296]">
           <div>
-            © {new Date().getFullYear()} Garage Work in Pune. All Rights Reserved.
+            © {new Date().getFullYear()} Garage Work in Pune. All Rights Reserved, Design by <a href="https://webakoof.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF3D00] transition-colors">Webakoof</a>
           </div>
           <div className="font-bold text-white uppercase tracking-widest">
             BUILT FOR THE RIDE AHEAD.

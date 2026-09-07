@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import MobileStickyBar from './components/MobileStickyBar';
+import FloatingActions from './components/FloatingActions';
 import ScrollToTop from './components/ScrollToTop';
 
 // Page Imports
@@ -87,6 +88,9 @@ export default function App() {
           onClose={() => setBookingOpen(false)}
           initialPackage={selectedPackage}
         />
+
+        {/* Floating WhatsApp & Back to Top Buttons */}
+        <FloatingActions />
 
         {/* Mobile Sticky Booking Bar */}
         <MobileStickyBar onOpenBooking={() => handleOpenBooking()} />
