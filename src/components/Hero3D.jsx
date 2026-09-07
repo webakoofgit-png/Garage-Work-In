@@ -125,9 +125,21 @@ function Motorcycle3DCanvas({ isAutoRotate }) {
 
 export default function Hero3D({ onOpenBooking }) {
   const [autoRotate, setAutoRotate] = useState(true);
+  const heroRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setAutoRotate(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+    if (heroRef.current) observer.observe(heroRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden bg-carbon-pattern border-b border-white/10">
+    <section ref={heroRef} className="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden bg-carbon-pattern border-b border-white/10">
       {/* Background Lighting & Particles Glow */}
       <div className="absolute inset-0 bg-radial from-[#FF3D00]/15 via-transparent to-transparent opacity-60 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.03] pointer-events-none" />

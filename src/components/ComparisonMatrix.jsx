@@ -184,17 +184,6 @@ export default function ComparisonMatrix({ onOpenBooking }) {
             </table>
           </div>
         </div>
-
-        {/* Bottom CTA Action Bar */}
-        <div className="mt-12 text-center">
-          <button
-            onClick={() => onOpenBooking()}
-            className="px-8 py-4 bg-[#FF3D00] hover:bg-[#ff551c] text-white font-tech font-bold text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all shadow-xl shadow-[#FF3D00]/30 hover:scale-105 active:scale-95"
-            data-cursor="BOOK"
-          >
-            EXPERIENCE GARAGE WORK IN — BOOK NOW (10% OFF)
-          </button>
-        </div>
       </div>
     </section>
   );

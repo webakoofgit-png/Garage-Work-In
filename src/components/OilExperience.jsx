@@ -76,7 +76,7 @@ export default function OilExperience({ onOpenBooking }) {
   const active = oils[selectedOil];
 
   return (
-    <section id="engine-oils" className="py-24 bg-[#080808] relative border-b border-white/10 overflow-hidden">
+    <section id="engine-oils" className="py-24 bg-[#080808] relative border-b border-white/10 overflow-hidden section-lazy-render">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#111] border border-[#FF3D00]/40 text-xs font-tech text-[#FF3D00] uppercase tracking-widest mb-3">
           <Droplet className="w-3.5 h-3.5 fill-[#FF3D00]" />
@@ -118,6 +118,8 @@ export default function OilExperience({ onOpenBooking }) {
               key={active.brand}
               src={active.logo}
               alt={active.brand}
+              loading="lazy"
+              decoding="async"
               className="max-h-full max-w-full object-contain drop-shadow-md animate-fade-in"
             />
           </div>

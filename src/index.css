@@ -18,6 +18,17 @@
   }
 }
 
+/* Performance & Render Optimization Utilities */
+.section-lazy-render {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
+}
+
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
 /* Typography Utility Classes */
 .font-display {
   font-family: 'Bebas Neue', sans-serif;
