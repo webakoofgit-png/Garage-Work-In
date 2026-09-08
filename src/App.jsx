@@ -10,6 +10,7 @@ import BookingModal from './components/BookingModal';
 import MobileStickyBar from './components/MobileStickyBar';
 import FloatingActions from './components/FloatingActions';
 import ScrollToTop from './components/ScrollToTop';
+import SeoManager from './components/SeoManager';
 
 // Page Imports
 import HomePage from './pages/HomePage';
@@ -57,6 +58,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <SeoManager />
       <div className="min-h-screen bg-[#080808] text-[#F4F2ED] relative overflow-x-hidden font-sans">
         {/* Custom Mouse Cursor */}
         <CustomCursor />
