@@ -4,4 +4,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://garageworkin.com/sitemap.xml
+Sitemap: https://www.garageworkin.com/sitemap.xml
