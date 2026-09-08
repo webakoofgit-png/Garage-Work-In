@@ -1,0 +1,7 @@
+# www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://garageworkin.com/sitemap.xml
